@@ -1,7 +1,7 @@
 # oauth-server
 OAuth (Google) authentication server boilerplate.
 
-Run locally with **npm run dev**. 
+Run locally with **npm run dev**. Server written as if deployed in Heroku. 
 
 Users stored in MongoDB.
 
