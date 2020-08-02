@@ -6,8 +6,17 @@ const keys = require("../config/keys");
 // Pulling the 'User' model class out of mongoose as an object
 const User = mongoose.model("users");
 
+// User model instance --> ID
 passport.serializeUser((user, done) => {
   done(null, user.id);
+});
+
+// ID --> User model instance
+passport.deserializeUser((id, done) => {
+  // Chain on .then because findById returns a promise
+  User.findById(id).then((user) => {
+    done(null, user);
+  });
 });
 
 passport.use(
